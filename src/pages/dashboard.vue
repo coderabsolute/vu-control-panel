@@ -6,7 +6,7 @@
 // import {AuthService} from '../services/AuthService'
 
 export default {
-  name: 'dashboard',
+  name: 'Dashboard',
   data () {
     console.log('Data is called.')
     return {

@@ -1,12 +1,13 @@
 // Pages
-import login from '../pages/login.vue'
-import dashboard from '../pages/dashboard.vue'
-import branches from '../pages/branches.vue'
-import logout from '../pages/logout.vue'
+import Login from '../pages/Login.vue'
+import Dashboard from '../pages/Dashboard.vue'
+import Branches from '../pages/Branches.vue'
+import Logout from '../pages/Logout.vue'
 
 export const parentRoutes = [
-  { path: '/login', component: login, meta: { requiresAuth: false } },
-  { path: '/dashboard', component: dashboard, meta: { requiresAuth: true } },
-  { path: '/branches', component: branches, meta: { requiresAuth: true } },
-  { path: '/logout', component: logout, meta: { requiresAuth: true } }
+  { path: '/', component: Login, meta: { requiresAuth: false } },
+  { path: '/login', component: Login, meta: { requiresAuth: false } },
+  { path: '/dashboard', component: Dashboard, meta: { requiresAuth: true } },
+  { path: '/branches', component: Branches, meta: { requiresAuth: true } },
+  { path: '/logout', component: Logout, meta: { requiresAuth: true } }
 ]

@@ -4,12 +4,17 @@
 </template>
 
 <script>
+import VueRouter from 'vue-router'
 import AuthService from '../services/AuthService'
 
 export default {
-  name: 'logout',
+  name: 'Logout',
   created () {
     AuthService.signOut()
+
+    var router = new VueRouter()
+
+    router.push({ path: '/login' })
   }
 }
 </script>

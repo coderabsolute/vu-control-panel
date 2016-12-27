@@ -22,7 +22,7 @@
 import AuthService from '../services/AuthService'
 
 export default {
-  name: 'login',
+  name: 'Login',
   data () {
     return {
       vm: {
