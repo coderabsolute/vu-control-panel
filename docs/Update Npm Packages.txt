@@ -1,0 +1,7 @@
+Update Npm Packages.
+1.  npm install -g npm-check-updates
+2.  npm-check-updates
+3.  npm update
+
+Run ncu with -u to upgrade package.json
+Once the package.json is updated then simply run 'npm update'

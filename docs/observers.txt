@@ -1,0 +1,3 @@
+The following document was very helpful in order to create the CustomDropdown component.
+
+https://github.com/axwalker/aurelia-observer-patterns/wiki/Observer-patterns-in-Aurelia
