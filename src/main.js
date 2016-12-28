@@ -6,7 +6,7 @@ import VueRouter from 'vue-router'
 import App from './App.vue'
 
 // Route Configuration
-import {parentRoutes} from './config/Routes'
+import {BaseRoutes} from './config/BaseRoutes'
 
 // Services
 import AuthService from './services/AuthService'
@@ -16,7 +16,7 @@ Vue.use(VueRouter)
 
 // routing
 const router = new VueRouter({
-  routes: parentRoutes // short for routes: routes
+  routes: BaseRoutes // short for routes: routes
 })
 
 router.beforeEach((to, from, next) => {
@@ -28,9 +28,9 @@ router.beforeEach((to, from, next) => {
         path: '/login',
         query: { redirect: to.fullPath }
       })
-    } else {
-      next()
     }
+
+    next()
   } else {
     next() // make sure to always call next()!
   }

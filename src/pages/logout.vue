@@ -1,20 +1,13 @@
 <template>
-  <!--Template may not be needed, so get rid of this template code.-->
-  <h1>Logout</h1>
 </template>
 
 <script>
-import VueRouter from 'vue-router'
 import AuthService from '../services/AuthService'
 
 export default {
   name: 'Logout',
-  created () {
+  beforeCreate () {
     AuthService.signOut()
-
-    var router = new VueRouter()
-
-    router.push({ path: '/login' })
   }
 }
 </script>

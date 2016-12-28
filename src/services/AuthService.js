@@ -34,7 +34,19 @@ export default {
   pushToDashboard () {
     var router = new VueRouter()
 
-    router.push({ path: 'dashboard' })
+    router.push({ path: '/dashboard' })
+
+    // enforce the hard reload
+    window.location.reload()
+  },
+
+  pushToLogin () {
+    var router = new VueRouter()
+
+    router.push({ path: '/login' })
+
+    // enforce the hard reload
+    window.location.reload()
   },
 
   clearToken () {
@@ -43,5 +55,6 @@ export default {
 
   signOut () {
     this.clearToken()
+    this.pushToLogin()
   }
 }
