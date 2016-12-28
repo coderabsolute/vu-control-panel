@@ -1,7 +1,7 @@
 <template>
   <div class="container">
     <div class=" col-sm-6">
-      <h1 class="text-center">{{vm.pageTitle}}</h1>
+      <page-header caption="Login"></page-header>
       <form v-on:submit="login">
         <div class="form-group">
           <label>Username</label>
@@ -12,7 +12,7 @@
           <input v-model="vm.password" type="password" class="form-control" id="password" placeholder="Password" required>
         </div>
 
-        <button type="submit" class="btn btn-success btn-block">Login</button>
+        <button type="submit" class="btn btn-primary">Login</button>
       </form>
     </div>
   </div>
@@ -26,7 +26,6 @@
     data () {
       return {
         vm: {
-          pageTitle: 'Login',
           username: 'test@test.com',
           password: 'test'
         }

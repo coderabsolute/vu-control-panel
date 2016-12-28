@@ -11,8 +11,14 @@ import {BaseRoutes} from './config/BaseRoutes'
 // Services
 import AuthService from './services/AuthService'
 
+// Components Registration
+import PageHeader from './components/PageHeader.vue'
+
 // install router
 Vue.use(VueRouter)
+
+// Component Global Registration
+Vue.component('page-header', PageHeader)
 
 // routing
 const router = new VueRouter({

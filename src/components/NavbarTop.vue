@@ -8,8 +8,8 @@
           Dropdown button
         </button>
         <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-          <router-link to="/foo" class="dropdown-item">Profile</router-link>
-          <router-link to="/foo" class="dropdown-item">Change Password</router-link>
+          <router-link to="/profile" class="dropdown-item">Profile</router-link>
+          <router-link to="/changePassword" class="dropdown-item">Change Password</router-link>
           <router-link to="/branches" class="dropdown-item">Branches</router-link>
           
           <div class="dropdown-divider"></div>

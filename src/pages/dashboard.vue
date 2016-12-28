@@ -37,7 +37,6 @@
 
 <script>
   import HttpService from '../services/HttpService'
-  import Vue from 'vue'
 
   export default {
     name: 'Dashboard',
