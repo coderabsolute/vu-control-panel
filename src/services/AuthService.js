@@ -37,7 +37,11 @@ export default {
     router.push({ path: 'dashboard' })
   },
 
-  signOut () {
+  clearToken () {
     LocalStorageService.remove(TOKEN_LOCAL_STORAGE)
+  },
+
+  signOut () {
+    this.clearToken()
   }
 }

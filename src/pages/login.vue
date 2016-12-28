@@ -19,24 +19,30 @@
 </template>
 
 <script>
-import AuthService from '../services/AuthService'
+  import AuthService from '../services/AuthService'
 
-export default {
-  name: 'Login',
-  data () {
-    return {
-      vm: {
-        pageTitle: 'Login',
-        username: 'test@test.com',
-        password: 'test'
+  export default {
+    name: 'Login',
+    data () {
+      return {
+        vm: {
+          pageTitle: 'Login',
+          username: 'test@test.com',
+          password: 'test'
+        }
+      }
+    },
+
+    beforeCreate () {
+      // TODO: Other way is to redirect the user to dashboard forcefully.
+      // This could be the improvement for future.
+      AuthService.clearToken()
+    },
+
+    methods: {
+      login () {
+        AuthService.signIn(this.vm.username, this.vm.password)
       }
     }
-  },
-
-  methods: {
-    login () {
-      AuthService.signIn(this.vm.username, this.vm.password)
-    }
   }
-}
 </script>
