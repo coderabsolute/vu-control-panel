@@ -39,5 +39,5 @@ router.beforeEach((to, from, next) => {
 /* eslint-disable no-new */
 new Vue({
   render: h => h(App),
-  router
+  router                  // attaching the router
 }).$mount('#app')

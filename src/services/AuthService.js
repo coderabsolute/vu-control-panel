@@ -1,22 +1,24 @@
-import LocalStorageService from './LocalStorageService'
-import {TOKEN_LOCAL_STORAGE} from '../config/AppConstants'
 import Axios from 'axios'
 import VueRouter from 'vue-router'
 
+import LocalStorageService from './LocalStorageService'
+import {TOKEN_LOCAL_STORAGE} from '../config/AppConstants'
+import {authUrl} from '../config/RestApi'
+
 export default {
   isAuthenticated () {
-    const token = LocalStorageService.get(TOKEN_LOCAL_STORAGE)
-
-    return (token)
+    return (this.getToken())
   },
 
   signIn (username, password) {
+    console.log(authUrl)
+
     Axios({
       method: 'post',
-      url: 'http://52.39.73.158/v1/auth',
+      url: authUrl,
       data: {
         email: username,
-        password
+        password: password
       }
     })
     .then(response => {
@@ -29,6 +31,11 @@ export default {
       this.pushToDashboard()
     })
     .catch(error => { console.log(error.response) })
+  },
+
+  signOut () {
+    this.clearToken()
+    this.pushToLogin()
   },
 
   pushToDashboard () {
@@ -49,12 +56,13 @@ export default {
     window.location.reload()
   },
 
-  clearToken () {
-    LocalStorageService.remove(TOKEN_LOCAL_STORAGE)
+  getToken () {
+    const token = LocalStorageService.get(TOKEN_LOCAL_STORAGE)
+
+    return token
   },
 
-  signOut () {
-    this.clearToken()
-    this.pushToLogin()
+  clearToken () {
+    LocalStorageService.remove(TOKEN_LOCAL_STORAGE)
   }
 }
