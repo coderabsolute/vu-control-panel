@@ -8,8 +8,12 @@ export default {
 
     return new Promise((resolve, reject) => {
       axios.get(url, this.headersConfig())
-      .then(response => { resolve(response.data) })
-      .catch(error => { reject(error.response.data) })
+      .then(response => {
+        resolve(response.data)
+      })
+      .catch(error => {
+        reject(error.response.data)
+      })
     })
   },
 
@@ -18,8 +22,12 @@ export default {
 
     return new Promise((resolve, reject) => {
       axios.get(url, formData, this.headersConfig())
-      .then(response => { resolve(response.data) })
-      .catch(error => { reject(error.response.data) })
+      .then(response => {
+        resolve(response.data)
+      })
+      .catch(error => {
+        reject(error.response.data)
+      })
     })
   },
 
