@@ -12,7 +12,7 @@
 
       <div class="form-group row">
         <label class="col-xs-2 col-form-label">Date of birth</label>
-        <div class="col-xs-2">
+        <div class="col-xs-4">
           <input v-model="vm.dateOfBirth" class="form-control" type="date">
         </div>
       </div>
@@ -51,6 +51,7 @@
 </template>
 
 <script>
+  import HttpService from '../services/HttpService'
   import ConstantService from '../services/ConstantService'
 
   export default {
@@ -70,12 +71,34 @@
     created () {
       Promise.all([ConstantService.languages()]).then((resolved) => {
         this.vm.languageList = resolved[0].results
+
+        this.getProfile()
       })
     },
 
     methods: {
+      getProfile () {
+        HttpService.get('userProfile')
+        .then(response => {
+          const profile = response.results
+
+          this.vm.name = profile.name
+          this.vm.selectedLanguageId = profile.defaultLanguageId
+          this.vm.dateOfBirth = profile.dateOfBirth
+          this.vm.gender = profile.gender
+        })
+      },
+
       submit () {
-        console.log('form is submitted')
+        const json = {
+          name: this.vm.name,
+          defaultLanguageId: this.vm.selectedLanguageId,
+          dateOfBirth: this.vm.dateOfBirth,
+          gender: this.vm.gender
+        }
+
+        HttpService.put('userProfile', json)
+        .then(console.log)
       }
     }
   }

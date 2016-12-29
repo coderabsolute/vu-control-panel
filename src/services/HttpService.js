@@ -1,6 +1,6 @@
 import axios from 'axios'
 import AuthService from './AuthService'
-import {securedApi} from '../config/RestApi'
+import {securedUrl} from '../config/RestApi'
 
 export default {
   get (resource) {
@@ -17,11 +17,25 @@ export default {
     })
   },
 
+  put (resource, formData) {
+    const url = this.getFullUrl(resource)
+
+    return new Promise((resolve, reject) => {
+      axios.put(url, formData, this.headersConfig())
+      .then(response => {
+        resolve(response.data)
+      })
+      .catch(error => {
+        reject(error.response.data)
+      })
+    })
+  },
+
   post (resource, formData) {
     const url = this.getFullUrl(resource)
 
     return new Promise((resolve, reject) => {
-      axios.get(url, formData, this.headersConfig())
+      axios.post(url, formData, this.headersConfig())
       .then(response => {
         resolve(response.data)
       })
@@ -42,13 +56,13 @@ export default {
 
   getAuthHeader () {
     const token = AuthService.getToken()
-    const tokenType = securedApi.tokenType
+    const tokenType = securedUrl.tokenType
 
     return tokenType + token
   },
 
   getFullUrl (resource) {
-    const fullUrl = securedApi.baseUrl + resource
+    const fullUrl = securedUrl.baseUrl + resource
 
     return fullUrl
   }

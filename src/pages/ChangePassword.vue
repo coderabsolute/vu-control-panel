@@ -30,6 +30,8 @@
 </template>
 
 <script>
+  import HttpService from '../services/HttpService'
+
   export default {
     name: 'ChangePassword',
     data () {
@@ -44,7 +46,15 @@
 
     methods: {
       submit () {
-        console.log(this.vm)
+        const json = {
+          oldPassword: this.vm.oldPassword,
+          newPassword: this.vm.newPassword,
+          reEnterNewPassword: this.vm.reEnterPassword
+        }
+
+        HttpService.put('changePassword', json)
+        .then(console.log)
+        console.log(json)
       }
     }
   }
