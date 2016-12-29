@@ -28,17 +28,17 @@ export default {
       LocalStorageService.add(TOKEN_LOCAL_STORAGE, token)
 
       // Push to dashboard
-      this.pushToDashboard()
+      this.redirectToDashboard()
     })
     .catch(error => { console.log(error.response) })
   },
 
   signOut () {
     this.clearToken()
-    this.pushToLogin()
+    this.redirectToLogin()
   },
 
-  pushToDashboard () {
+  redirectToDashboard () {
     var router = new VueRouter()
 
     router.push({ path: '/dashboard' })
@@ -47,7 +47,7 @@ export default {
     window.location.reload()
   },
 
-  pushToLogin () {
+  redirectToLogin () {
     var router = new VueRouter()
 
     router.push({ path: '/login' })

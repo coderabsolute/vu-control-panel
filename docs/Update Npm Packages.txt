@@ -4,4 +4,5 @@ Update Npm Packages.
 3.  npm update
 
 Run ncu with -u to upgrade package.json
+  Example: ncu -u
 Once the package.json is updated then simply run 'npm update'

@@ -20,7 +20,7 @@
       <div class="form-group row">
         <div class="col-sm-4">
           <label>Re-enter Password</label>
-          <input v-model="vm.reEnterPassword" type="password" class="form-control" placeholder="Password" required>
+          <input v-model="vm.reEnterNewPassword" type="password" class="form-control" placeholder="Password" required>
         </div>
       </div>
 
@@ -39,22 +39,17 @@
         vm: {
           oldPassword: '',
           newPassword: '',
-          reEnterPassword: ''
+          reEnterNewPassword: ''
         }
       }
     },
 
     methods: {
       submit () {
-        const json = {
-          oldPassword: this.vm.oldPassword,
-          newPassword: this.vm.newPassword,
-          reEnterNewPassword: this.vm.reEnterPassword
-        }
+        const json = JSON.stringify(this.vm)
 
         HttpService.put('changePassword', json)
         .then(console.log)
-        console.log(json)
       }
     }
   }

@@ -17,6 +17,14 @@ export default {
     })
   },
 
+  getOne (resource, id) {
+    const resourceWithId = resource + '/' + id
+
+    return new Promise((resolve, reject) => {
+      this.get(resourceWithId)
+    })
+  },
+
   put (resource, formData) {
     const url = this.getFullUrl(resource)
 
@@ -28,6 +36,14 @@ export default {
       .catch(error => {
         reject(error.response.data)
       })
+    })
+  },
+
+  putOne (resource, id, formData) {
+    const resourceWithId = resource + '/' + id
+
+    return new Promise((resolve, reject) => {
+      axios.put(resourceWithId, formData, this.headersConfig())
     })
   },
 

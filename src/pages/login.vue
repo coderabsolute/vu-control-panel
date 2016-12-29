@@ -2,11 +2,13 @@
   <div class="container">
     <div class=" col-sm-6">
       <page-header caption="Login"></page-header>
+
       <form v-on:submit="login">
         <div class="form-group">
           <label>Username</label>
           <input v-model="vm.username" type="email" class="form-control" id="username" placeholder="Username" required autofocus>
         </div>
+        
         <div class="form-group">
           <label>Password</label>
           <input v-model="vm.password" type="password" class="form-control" id="password" placeholder="Password" required>

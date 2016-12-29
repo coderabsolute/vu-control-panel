@@ -1,5 +1,5 @@
 <template>
-  <h1>{{pageTitle}}</h1>
+  <page-header caption="Branches"></page-header>
 </template>
 
 <script>
