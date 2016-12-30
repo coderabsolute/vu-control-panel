@@ -7,7 +7,7 @@ export default {
     try {
       window.localStorage.removeItem(name)
     } catch (e) {
-      console.log(e)
+      console.error(e)
     }
   },
 
@@ -21,7 +21,7 @@ export default {
 
       return (value)
     } catch (e) {
-      console.log(e)
+      console.error(e)
     }
   }
 }

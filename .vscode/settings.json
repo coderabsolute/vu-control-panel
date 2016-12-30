@@ -1,4 +1,10 @@
-// Place your settings in this file to overwrite default and user settings.
+// Place your settings in this file to overwrite the default settings
 {
-  "editor.tabSize": 2
+    "editor.fontFamily": "DejaVu Sans Mono",
+    "editor.fontSize": 15,
+    "editor.tabSize": 2,
+    "editor.renderWhitespace": "all",
+    "window.zoomLevel": 3,
+    "editor.lineHeight": 25,
+    "search.quickOpen.includeSymbols": false 
 }

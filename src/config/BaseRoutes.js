@@ -6,10 +6,10 @@ import Profile from '../pages/Profile.vue'
 import Logout from '../pages/Logout.vue'
 
 export const BaseRoutes = [
-  { path: '/', component: Login, meta: { requiresAuth: false } },
-  { path: '/login', component: Login, meta: { requiresAuth: false } },
-  { path: '/dashboard', component: Dashboard, meta: { requiresAuth: true } },
-  { path: '/changePassword', component: ChangePassword, meta: { requiresAuth: true } },
-  { path: '/profile', component: Profile, meta: { requiresAuth: true } },
-  { path: '/logout', component: Logout, meta: { requiresAuth: true } }
+  { path: '/', component: Login, meta: { requiresAuth: false, owner: 'base' } },
+  { path: '/login', component: Login, meta: { requiresAuth: false, owner: 'base' } },
+  { path: '/dashboard', component: Dashboard, meta: { requiresAuth: true, owner: 'base' } },
+  { path: '/changePassword', component: ChangePassword, meta: { requiresAuth: true, owner: 'base' } },
+  { path: '/profile', component: Profile, meta: { requiresAuth: true, owner: 'base' } },
+  { path: '/logout', component: Logout, meta: { requiresAuth: true, owner: 'base' } }
 ]

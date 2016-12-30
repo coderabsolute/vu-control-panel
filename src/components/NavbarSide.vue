@@ -1,17 +1,26 @@
 <template>
   <div class="list-group">
-    <a href="#" class="list-group-item">
-      Cras justo odio
-    </a>
-    <a href="#" class="list-group-item list-group-item-action active">Dapibus ac facilisis in</a>
-    <a href="#" class="list-group-item list-group-item-action">Morbi leo risus</a>
-    <a href="#" class="list-group-item list-group-item-action">Porta ac consectetur ac</a>
-    <a href="#" class="list-group-item list-group-item-action disabled">Vestibulum at eros</a>
+    <router-link v-for="item in routeList"
+      v-bind:to="item.path"
+      class="list-group-item list-group-item-action">
+      {{ item.name }}
+    </router-link>
   </div>
 </template>
 
 <script>
+  import AllRoutes from '../config/AllRoutes'
+
   export default {
-    name: 'NavbarSide'
+    name: 'NavbarSide',
+    data () {
+      return {
+        routeList: []
+      }
+    },
+
+    created () {
+      this.routeList = AllRoutes.getAllNonBaseRoutes()
+    }
   }
 </script>

@@ -6,7 +6,7 @@ import VueRouter from 'vue-router'
 import App from './App.vue'
 
 // Route Configuration
-import {BaseRoutes} from './config/BaseRoutes'
+import AllRoutes from './config/AllRoutes'
 
 // Services
 import AuthService from './services/AuthService'
@@ -24,7 +24,7 @@ Vue.component('submit-button', SubmitButton)
 
 // routing
 const router = new VueRouter({
-  routes: BaseRoutes // short for routes: routes
+  routes: AllRoutes.getAllRoutes()
 })
 
 router.beforeEach((to, from, next) => {

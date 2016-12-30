@@ -11,8 +11,6 @@ export default {
   },
 
   signIn (username, password) {
-    console.log(authUrl)
-
     Axios({
       method: 'post',
       url: authUrl,
@@ -30,7 +28,7 @@ export default {
       // Push to dashboard
       this.redirectToDashboard()
     })
-    .catch(error => { console.log(error.response) })
+    .catch(error => { console.error(error.response) })
   },
 
   signOut () {

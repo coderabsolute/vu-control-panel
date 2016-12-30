@@ -54,7 +54,6 @@
 <script>
   import HttpService from '../services/HttpService'
   import ConstantService from '../services/ConstantService'
-  import Alert from '../components/Alert'
 
   export default {
     name: 'Profile',
@@ -71,9 +70,6 @@
     },
 
     created () {
-      let instance = new Alert()
-      instance.show()
-
       Promise.all([ConstantService.languages()]).then((resolved) => {
         this.vm.languageList = resolved[0].results
 

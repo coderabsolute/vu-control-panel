@@ -4,11 +4,6 @@
 
 <script>
 export default {
-  name: 'branches',
-  data () {
-    return {
-      pageTitle: 'Branches'
-    }
-  }
+  name: 'branches'
 }
 </script>

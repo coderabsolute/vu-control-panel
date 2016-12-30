@@ -1,18 +1,26 @@
-// The routes defined in this class only belongs to the Tenants and 
+// The routes defined in this class only belongs to the Tenants and
 // every route must have a requireAuth by default.
-
-import Login from '../pages/Login.vue'
-import Dashboard from '../pages/Dashboard.vue'
-import ChangePassword from '../pages/ChangePassword.vue'
-import Profile from '../pages/Profile.vue'
-import Logout from '../pages/Logout.vue'
-
+import Branches from '../pages/tenant/Branches.vue'
+import Products from '../pages/tenant/Products.vue'
+import Variants from '../pages/tenant/Variants.vue'
 
 export const TenantRoutes = [
-  { path: '/', component: Login, meta: { requiresAuth: true } },
-  { path: '/login', component: Login, meta: { requiresAuth: true } },
-  { path: '/dashboard', component: Dashboard, meta: { requiresAuth: true } },
-  { path: '/changePassword', component: ChangePassword, meta: { requiresAuth: true } },
-  { path: '/profile', component: Profile, meta: { requiresAuth: true } },
-  { path: '/logout', component: Logout, meta: { requiresAuth: true } }
+  {
+    name: 'Branches',
+    path: '/branches',
+    component: Branches,
+    meta: { requiresAuth: true, owner: 'tenant' }
+  },
+  {
+    name: 'Products',
+    path: '/products',
+    component: Products,
+    meta: { requiresAuth: true, owner: 'tenant' }
+  },
+  {
+    name: 'Variants',
+    path: '/variants',
+    component: Variants,
+    meta: { requiresAuth: true, owner: 'tenant' }
+  }
 ]
