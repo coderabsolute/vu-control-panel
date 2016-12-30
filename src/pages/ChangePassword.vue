@@ -8,7 +8,7 @@
         <div class="col-sm-4">
           <label>Current Password</label>
           <input v-model="vm.oldPassword" type="password" class="form-control" placeholder="Password" required autofocus>
-        </div>        
+        </div>
       </div>
 
       <div class="form-group row">
@@ -25,7 +25,7 @@
         </div>
       </div>
 
-      <button type="submit" class="btn btn-primary">Update Changes</button>
+      <submit-button caption="Update Changes"></submit-button>
     </form>
   </div>
 </template>

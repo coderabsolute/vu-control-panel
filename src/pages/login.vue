@@ -15,7 +15,7 @@
           <input v-model="vm.password" type="password" class="form-control" id="password" placeholder="Password" required>
         </div>
 
-        <button type="submit" class="btn btn-primary">Login</button>
+        <submit-button caption="Login"></submit-button>
       </form>
     </div>
   </div>

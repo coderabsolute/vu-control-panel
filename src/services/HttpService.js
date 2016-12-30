@@ -82,5 +82,4 @@ export default {
 
     return fullUrl
   }
-
 }

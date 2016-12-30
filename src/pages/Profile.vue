@@ -43,19 +43,18 @@
 
       <div class="form-group row">
         <div class="offset-sm-2 col-sm-10">
-          <button type="submit" class="btn btn-primary">Update Changes</button>
+          <submit-button caption="Update Changes"></submit-button>
         </div>
       </div>
 
-      <alert type="success"></alert>
-
     </form>
-  </div>  
+  </div>
 </template>
 
 <script>
   import HttpService from '../services/HttpService'
   import ConstantService from '../services/ConstantService'
+  import Alert from '../components/Alert'
 
   export default {
     name: 'Profile',
@@ -72,6 +71,9 @@
     },
 
     created () {
+      let instance = new Alert()
+      instance.show()
+
       Promise.all([ConstantService.languages()]).then((resolved) => {
         this.vm.languageList = resolved[0].results
 
