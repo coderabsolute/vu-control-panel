@@ -13,12 +13,14 @@ import AuthService from './services/AuthService'
 
 // Components Registration
 import PageHeader from './components/PageHeader.vue'
+import Alert from './components/Alert.vue'
 
 // install router
 Vue.use(VueRouter)
 
 // Component Global Registration
 Vue.component('page-header', PageHeader)
+Vue.component('alert', Alert)
 
 // routing
 const router = new VueRouter({

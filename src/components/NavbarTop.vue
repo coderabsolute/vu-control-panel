@@ -7,10 +7,10 @@
         <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           Dropdown button
         </button>
+
         <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
           <router-link to="/profile" class="dropdown-item">Profile</router-link>
           <router-link to="/changePassword" class="dropdown-item">Change Password</router-link>
-          <router-link to="/branches" class="dropdown-item">Branches</router-link>
           
           <div class="dropdown-divider"></div>
           <router-link to="/logout" class="dropdown-item">Logout</router-link>

@@ -4,6 +4,7 @@
       <page-header caption="Login"></page-header>
 
       <form v-on:submit="login">
+        
         <div class="form-group">
           <label>Username</label>
           <input v-model="vm.username" type="email" class="form-control" id="username" placeholder="Username" required autofocus>

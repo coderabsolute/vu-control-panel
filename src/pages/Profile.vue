@@ -3,6 +3,7 @@
     <page-header caption="Profile"></page-header>
 
     <form v-on:submit="submit">
+
       <div class="form-group row">
         <label class="col-xs-2 col-form-label">Name</label>
         <div class="col-xs-4">
@@ -45,7 +46,9 @@
           <button type="submit" class="btn btn-primary">Update Changes</button>
         </div>
       </div>
-     
+
+      <alert type="success"></alert>
+
     </form>
   </div>  
 </template>
