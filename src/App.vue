@@ -9,11 +9,11 @@
         <!--Side navigation bar is only shown to authenticated users-->
         <div class="col-sm-3 col-md-2 sidebar">
           <navbar-side v-if="isAuthenticated"></navbar-side>
-        </div>       
+        </div>
 
         <!--The pages gets injected here based on the router selection-->
         <div class="col-sm-9 col-md-10 main">
-          <router-view></router-view>  
+          <router-view></router-view>
         </div>
         
       </div>

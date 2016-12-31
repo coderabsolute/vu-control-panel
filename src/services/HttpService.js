@@ -8,12 +8,8 @@ export default {
 
     return new Promise((resolve, reject) => {
       axios.get(url, this.headersConfig())
-      .then(response => {
-        resolve(response.data)
-      })
-      .catch(error => {
-        reject(error.response.data)
-      })
+      .then(response => { resolve(response.data) })
+      .catch(error => { reject(error.response.data) })
     })
   },
 
@@ -22,6 +18,8 @@ export default {
 
     return new Promise((resolve, reject) => {
       this.get(resourceWithId)
+      .then(response => { resolve(response) })
+      .catch(error => { reject(error) })
     })
   },
 
@@ -30,12 +28,8 @@ export default {
 
     return new Promise((resolve, reject) => {
       axios.put(url, formData, this.headersConfig())
-      .then(response => {
-        resolve(response.data)
-      })
-      .catch(error => {
-        reject(error.response.data)
-      })
+      .then(response => { resolve(response.data) })
+      .catch(error => { reject(error.response.data) })
     })
   },
 
@@ -43,7 +37,9 @@ export default {
     const resourceWithId = resource + '/' + id
 
     return new Promise((resolve, reject) => {
-      axios.put(resourceWithId, formData, this.headersConfig())
+      this.put(resourceWithId, formData, this.headersConfig())
+      .then(response => { resolve(response) })
+      .catch(error => { reject(error) })
     })
   },
 
@@ -52,12 +48,8 @@ export default {
 
     return new Promise((resolve, reject) => {
       axios.post(url, formData, this.headersConfig())
-      .then(response => {
-        resolve(response.data)
-      })
-      .catch(error => {
-        reject(error.response.data)
-      })
+      .then(response => { resolve(response.data) })
+      .catch(error => { reject(error.response.data) })
     })
   },
 

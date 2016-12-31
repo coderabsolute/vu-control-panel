@@ -9,6 +9,10 @@ export default {
     return HttpService.get('constants/countries').then().catch()
   },
 
+  currencies () {
+    return HttpService.get('constants/currencies').then().catch()
+  },
+
   timezones () {
     return HttpService.get('constants/timezones').then().catch()
   }

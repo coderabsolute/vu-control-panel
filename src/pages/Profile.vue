@@ -34,7 +34,6 @@
       <div class="form-group row">
         <label class="col-xs-2 col-form-label">Default Language</label>
         <div class="col-xs-4">
-
           <select v-model="vm.selectedLanguageId" class="custom-select form-control">
             <option v-for="item in vm.languageList" v-bind:value="item.key">{{item.value}}</option>
           </select>
@@ -57,6 +56,7 @@
 
   export default {
     name: 'Profile',
+
     data () {
       return {
         vm: {
@@ -73,12 +73,12 @@
       Promise.all([ConstantService.languages()]).then((resolved) => {
         this.vm.languageList = resolved[0].results
 
-        this.getProfile()
+        this.fetchData()
       })
     },
 
     methods: {
-      getProfile () {
+      fetchData () {
         HttpService.get('userProfile')
         .then(response => {
           const profile = response.results

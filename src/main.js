@@ -14,6 +14,7 @@ import AuthService from './services/AuthService'
 // Components Registration
 import PageHeader from './components/PageHeader.vue'
 import SubmitButton from './components/SubmitButton.vue'
+import CancelButton from './components/CancelButton.vue'
 
 // install router
 Vue.use(VueRouter)
@@ -21,6 +22,7 @@ Vue.use(VueRouter)
 // Component Global Registration
 Vue.component('page-header', PageHeader)
 Vue.component('submit-button', SubmitButton)
+Vue.component('cancel-button', CancelButton)
 
 // routing
 const router = new VueRouter({
