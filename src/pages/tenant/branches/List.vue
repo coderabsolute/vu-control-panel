@@ -1,8 +1,8 @@
 <template>
   <div>
-    <h4>List - {{ vm.recordCount }}</h4>
-
     <table class="table">
+      <table-header path="/branches/:id/create"></table-header>
+
       <thead class="thead-inverse">
         <tr>
           <th>Branch Name</th>
@@ -16,7 +16,7 @@
       <tbody>
         <tr v-for="item in vm.list">
           <td>
-            <router-link v-bind:to="{ path: item.branchId + '/edit'}  ">
+            <router-link v-bind:to="{ path: item.branchId + '/edit'} ">
               {{ item.branchName }}
             </router-link>
           </td>

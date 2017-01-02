@@ -1,12 +1,13 @@
 <template>
   <div>
     <page-header caption="Branches"></page-header>
+
     <router-view></router-view>
   </div>  
 </template>
 
 <script>
-export default {
-  name: 'branches'
-}
+  export default {
+    name: 'Branches'
+  }
 </script>

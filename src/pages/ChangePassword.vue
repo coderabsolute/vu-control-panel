@@ -26,6 +26,7 @@
       </div>
 
       <submit-button caption="Update Changes"></submit-button>
+      <cancel-button></cancel-button>
     </form>
   </div>
 </template>
@@ -38,9 +39,9 @@
     data () {
       return {
         vm: {
-          oldPassword: '',
-          newPassword: '',
-          reEnterNewPassword: ''
+          oldPassword: null,
+          newPassword: null,
+          reEnterNewPassword: null
         }
       }
     },

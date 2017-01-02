@@ -1,3 +1,5 @@
+<!--TODO: This component is not completed yet.
+This component can be replaced with Notification Service.-->
 <template>
   <div v-if="show" class="alert alert-dismissible fade in" v-bind:class="alertType" role="alert">
     <button type="button" class="close" data-dismiss="alert" aria-label="Close">

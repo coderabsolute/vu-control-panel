@@ -9,7 +9,7 @@
 </template>
 
 <script>
-  import AllRoutes from '../config/AllRoutes'
+  import AllRoutes from '../routes/Routes'
 
   export default {
     name: 'NavbarSide',
@@ -20,7 +20,7 @@
     },
 
     created () {
-      this.routeList = AllRoutes.getAllNonBaseRoutes()
+      this.routeList = AllRoutes.getTenantRoutes()
     }
   }
 </script>

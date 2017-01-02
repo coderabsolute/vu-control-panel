@@ -43,6 +43,7 @@
       <div class="form-group row">
         <div class="offset-sm-2 col-sm-10">
           <submit-button caption="Update Changes"></submit-button>
+          <cancel-button></cancel-button>
         </div>
       </div>
 
@@ -62,9 +63,9 @@
         vm: {
           languageList: [],
           selectedLanguageId: 0,
-          name: '',
-          dateOfBirth: '',
-          gender: ''
+          name: null,
+          dateOfBirth: null,
+          gender: null
         }
       }
     },

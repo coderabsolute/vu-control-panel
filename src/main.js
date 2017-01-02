@@ -6,27 +6,35 @@ import VueRouter from 'vue-router'
 import App from './App.vue'
 
 // Route Configuration
-import AllRoutes from './config/AllRoutes'
+import Routes from './routes/Routes'
 
 // Services
 import AuthService from './services/AuthService'
 
-// Components Registration
+// Components
 import PageHeader from './components/PageHeader.vue'
+import TableHeader from './components/TableHeader.vue'
+import CreateButton from './components/CreateButton.vue'
 import SubmitButton from './components/SubmitButton.vue'
 import CancelButton from './components/CancelButton.vue'
+import DropdownList from './components/DropdownList.vue'
 
 // install router
 Vue.use(VueRouter)
 
 // Component Global Registration
 Vue.component('page-header', PageHeader)
+Vue.component('table-header', TableHeader)
+Vue.component('create-button', CreateButton)
 Vue.component('submit-button', SubmitButton)
 Vue.component('cancel-button', CancelButton)
+Vue.component('dropdown-list', DropdownList)
+
+console.log(Routes.getAllRoutes())
 
 // routing
 const router = new VueRouter({
-  routes: AllRoutes.getAllRoutes()
+  routes: Routes.getAllRoutes()
 })
 
 router.beforeEach((to, from, next) => {

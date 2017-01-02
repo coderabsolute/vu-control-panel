@@ -1,3 +1,5 @@
+// A Sample code got from internet
+
 import jwtDecode from 'jwt-decode'
 /**
  * @returns {object} or false

@@ -1,10 +1,12 @@
 import axios from 'axios'
-import AuthService from './AuthService'
+
+import LocalStorageService from './LocalStorageService'
+import {TOKEN_LOCAL_STORAGE} from '../config/AppConstants'
 import {securedUrl} from '../config/RestApi'
 
 export default {
   get (resource) {
-    const url = this.getFullUrl(resource)
+    const url = this.getCompleteUrl(resource)
 
     return new Promise((resolve, reject) => {
       axios.get(url, this.headersConfig())
@@ -24,7 +26,7 @@ export default {
   },
 
   put (resource, formData) {
-    const url = this.getFullUrl(resource)
+    const url = this.getCompleteUrl(resource)
 
     return new Promise((resolve, reject) => {
       axios.put(url, formData, this.headersConfig())
@@ -44,7 +46,7 @@ export default {
   },
 
   post (resource, formData) {
-    const url = this.getFullUrl(resource)
+    const url = this.getCompleteUrl(resource)
 
     return new Promise((resolve, reject) => {
       axios.post(url, formData, this.headersConfig())
@@ -63,13 +65,13 @@ export default {
   },
 
   getAuthHeader () {
-    const token = AuthService.getToken()
+    const token = LocalStorageService.get(TOKEN_LOCAL_STORAGE)
     const tokenType = securedUrl.tokenType
 
     return tokenType + token
   },
 
-  getFullUrl (resource) {
+  getCompleteUrl (resource) {
     const fullUrl = securedUrl.baseUrl + resource
 
     return fullUrl

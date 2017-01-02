@@ -4,7 +4,7 @@
       <div class="form-group row">
         <label class="col-xs-2 col-form-label">Branch name</label>
         <div class="col-xs-4">
-          <input v-model="vm.branchName" class="form-control" type="text">
+          <input v-model="vm.branchName" class="form-control" type="text" required autofocus>
         </div>
       </div>
 
@@ -65,13 +65,14 @@
     data () {
       return {
         vm: {
+          selectedValue: null,
           id: this.$route.params.id,
           currencyList: [],
           timezoneList: [],
-          selectedCurrencyId: 0,
-          selectedTimezoneId: 0,
-          branchName: '',
-          businessRegistrationNo: '',
+          selectedCurrencyId: null,
+          selectedTimezoneId: null,
+          branchName: null,
+          businessRegistrationNo: null,
           isActive: false
         }
       }
