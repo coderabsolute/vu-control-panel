@@ -5,35 +5,36 @@
     <form v-on:submit="submit">
 
       <div class="form-group row">
-        <label class="col-xs-2 col-form-label">Name</label>
-        <div class="col-xs-4">
+        <div class="col-sm-4">
+          <label>Name</label>
           <input v-model="vm.name" class="form-control" type="text">
         </div>
       </div>
 
       <div class="form-group row">
-        <label class="col-xs-2 col-form-label">Date of birth</label>
-        <div class="col-xs-4">
+        <div class="col-sm-4">
+          <label>Date of birth</label>
           <input v-model="vm.dateOfBirth" class="form-control" type="date">
         </div>
       </div>
 
       <div class="form-group row">
-        <label class="col-xs-2 col-form-label">Gender</label>
-        <div class="col-xs-6">
-          <label class="form-check-label">
-            <input class="form-check-input" type="radio" name="exampleRadios" value="1" v-model="vm.gender">Male
-          </label>
-
-          <label class="form-check-label">
-            <input class="form-check-input" type="radio" name="exampleRadios" value="2" v-model="vm.gender">Female
-          </label>
+        <div class="col-sm-4">
+          <label>Gender</label>
+          <div>
+            <label class="form-check-label">
+              <input class="form-check-input" type="radio" name="exampleRadios" value="1" v-model="vm.gender">Male
+            </label>
+            <label class="form-check-label">
+              <input class="form-check-input" type="radio" name="exampleRadios" value="2" v-model="vm.gender">Female
+            </label>
+          </div>
         </div>
       </div>
 
       <div class="form-group row">
-        <label class="col-xs-2 col-form-label">Default Language</label>
-        <div class="col-xs-4">
+        <div class="col-sm-4">
+          <label>Default Language</label>
           <select v-model="vm.selectedLanguageId" class="custom-select form-control">
             <option v-for="item in vm.languageList" v-bind:value="item.key">{{item.value}}</option>
           </select>

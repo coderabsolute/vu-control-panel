@@ -35,3 +35,9 @@
     }
   }
 </script>
+
+<style>
+  .fa-check {
+    color: green
+  }
+</style>

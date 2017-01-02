@@ -30,8 +30,6 @@ Vue.component('submit-button', SubmitButton)
 Vue.component('cancel-button', CancelButton)
 Vue.component('dropdown-list', DropdownList)
 
-console.log(Routes.getAllRoutes())
-
 // routing
 const router = new VueRouter({
   routes: Routes.getAllRoutes()

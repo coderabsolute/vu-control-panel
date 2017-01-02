@@ -14,7 +14,7 @@
       </thead>
 
       <tbody>
-        <tr v-for="item in vm.list">
+        <tr v-for="item in vm.list" :class="item.isActive === false ? 'table-danger' : ''">
           <td>
             <router-link v-bind:to="{ path: item.branchId + '/edit'} ">
               {{ item.branchName }}
@@ -23,7 +23,9 @@
           <td>{{ item.branchRegistrationNo }}</td>
           <td>{{ item.currencyName }}</td>
           <td>{{ item.timezoneName }}</td>
-          <td>{{ item.isActive }}</td>
+          <td class="text-sm-center">
+            <i v-if="item.isActive === true" class="fa fa-check"></i>
+          </td>
         </tr>
       </tbody>
 
