@@ -13,20 +13,13 @@
 </template>
 
 <script>
-  import Vue from 'Vue'
   export default {
     name: 'DropdownList',
-    props: ['items', 'caption'],
+    props: ['options', 'caption'],
     data () {
       return {
         selectedId: null
       }
-    },
-
-    created () {
-      var bus = new Vue()
-
-      bus.$emit('id-selected', 1)
     }
   }
 </script>

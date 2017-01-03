@@ -3,7 +3,7 @@
     <page-header caption="Change Password"></page-header>
 
     <form v-on:submit="submit">
-      
+
       <div class="form-group row">
         <div class="col-sm-4">
           <label>Current Password</label>
