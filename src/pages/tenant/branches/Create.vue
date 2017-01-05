@@ -18,20 +18,14 @@
       <div class="form-group row">
         <label class="col-xs-2 col-form-label">Default Currency</label>
         <div class="col-xs-4">
-          <select v-model="vm.selectedCurrencyId" class="custom-select form-control">
-            <option v-bind:value="null">Choose....</option>
-            <option v-for="item in vm.currencyList" v-bind:value="item.key">{{item.value}}</option>
-          </select>
+          <dropdown-list :options="vm.currencyList" v-model="vm.selectedCurrencyId"></dropdown-list>
         </div>
       </div>
 
       <div class="form-group row">
         <label class="col-xs-2 col-form-label">Timezone</label>
         <div class="col-xs-4">
-          <select v-model="vm.selectedTimezoneId" class="custom-select form-control">
-            <option v-bind:value="null">Choose....</option>
-            <option v-for="item in vm.timezoneList" v-bind:value="item.key">{{item.value}}</option>
-          </select>
+          <dropdown-list :options="vm.timezoneList" v-model="vm.selectedTimezoneId"></dropdown-list>
         </div>
       </div>
 
@@ -66,6 +60,7 @@
     data () {
       return {
         vm: {
+          selectedId: null,
           currencyList: [],
           timezoneList: [],
           selectedCurrencyId: null,

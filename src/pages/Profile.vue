@@ -35,9 +35,14 @@
       <div class="form-group row">
         <div class="col-sm-4">
           <label>Default Language</label>
+          <dropdown-list :options="vm.languageList" :pre-selected-key="vm.selectedLanguageId" v-model="vm.selectedLanguageId"></dropdown-list>
           <select v-model="vm.selectedLanguageId" class="custom-select form-control">
             <option v-for="item in vm.languageList" v-bind:value="item.key">{{item.value}}</option>
           </select>
+
+          <div>
+            {{vm.selectedLanguageId}}
+          </div>
         </div>
       </div>
 
