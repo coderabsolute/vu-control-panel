@@ -17,17 +17,17 @@
       }
     },
 
-    created () {
+    watch: {
+      selectedId (value) {
+        this.$emit('input', value)
+      }
+    },
+
+    updated () {
       if (this.preSelectedKey === undefined) {
         this.selectedId = null
       } else {
         this.selectedId = this.preSelectedKey
-      }
-    },
-
-    watch: {
-      selectedId (value) {
-        this.$emit('input', value)
       }
     }
   }

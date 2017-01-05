@@ -18,14 +18,21 @@
       <div class="form-group row">
         <label class="col-xs-2 col-form-label">Default Currency</label>
         <div class="col-xs-4">
-          <dropdown-list :options="vm.currencyList" v-model="vm.selectedCurrencyId"></dropdown-list>
+          <dropdown-list 
+            :options="vm.currencyList"
+            :pre-selected-key="vm.selectedCurrencyId"
+            v-model="vm.selectedCurrencyId"
+          ></dropdown-list>
         </div>
       </div>
 
       <div class="form-group row">
         <label class="col-xs-2 col-form-label">Timezone</label>
         <div class="col-xs-4">
-          <dropdown-list :options="vm.timezoneList" v-model="vm.selectedTimezoneId"></dropdown-list>
+          <dropdown-list 
+            :options="vm.timezoneList"
+            :pre-selected-key="vm.selectedTimezoneId"
+            v-model="vm.selectedTimezoneId"></dropdown-list>
         </div>
       </div>
 
@@ -60,7 +67,6 @@
     data () {
       return {
         vm: {
-          selectedId: null,
           currencyList: [],
           timezoneList: [],
           selectedCurrencyId: null,
@@ -93,10 +99,7 @@
         }
 
         HttpService.post('branches', body)
-        .then(response => {
-          this.$router.go(-1)
-        })
-        .error(console.error)
+        .then(response => { this.$router.go(-1) })
       }
     }
   }

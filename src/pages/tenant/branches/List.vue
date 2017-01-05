@@ -20,7 +20,7 @@
               {{ item.branchName }}
             </router-link>
           </td>
-          <td>{{ item.branchRegistrationNo }}</td>
+          <td>{{ item.businessRegistrationNo }}</td>
           <td>{{ item.currencyName }}</td>
           <td>{{ item.timezoneName }}</td>
           <td class="text-sm-center">

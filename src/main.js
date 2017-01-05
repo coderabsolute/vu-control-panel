@@ -45,7 +45,6 @@ router.beforeEach((to, from, next) => {
         query: { redirect: to.fullPath }
       })
     }
-
     next()
   } else {
     next() // make sure to always call next()!
