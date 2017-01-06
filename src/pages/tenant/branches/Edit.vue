@@ -114,7 +114,10 @@
         }
 
         HttpService.putOne('branches', this.vm.id, body)
-        .then(response => { this.$router.go(-1) })
+        .then(success => {
+          this.$root.bus.$emit('notification.success', 'Success!', success.successMessage)
+          this.$router.go(-1)
+        })
       }
     }
   }

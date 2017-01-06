@@ -15,7 +15,8 @@
         <div class="col-sm-9 col-md-10 main">
           <router-view></router-view>
         </div>
-        
+
+        <notifications :auto-remove="true" :auto-remove-time="2500"></notifications>
       </div>
   </div>
 </template>

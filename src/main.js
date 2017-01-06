@@ -12,12 +12,14 @@ import Routes from './routes/Routes'
 import AuthService from './services/AuthService'
 
 // Components
-import PageHeader from './components/PageHeader.vue'
-import TableHeader from './components/TableHeader.vue'
-import CreateButton from './components/CreateButton.vue'
-import SubmitButton from './components/SubmitButton.vue'
-import CancelButton from './components/CancelButton.vue'
-import DropdownList from './components/DropdownList.vue'
+// import PageHeader from './components/PageHeader.vue'
+const PageHeader = (resolve) => require(['./components/PageHeader.vue'], resolve)
+const TableHeader = (resolve) => require(['./components/TableHeader.vue'], resolve)
+const CreateButton = (resolve) => require(['./components/CreateButton.vue'], resolve)
+const SubmitButton = (resolve) => require(['./components/SubmitButton.vue'], resolve)
+const CancelButton = (resolve) => require(['./components/CancelButton.vue'], resolve)
+const DropdownList = (resolve) => require(['./components/DropdownList.vue'], resolve)
+const Notifications = (resolve) => require(['./components/Notification.vue'], resolve)
 
 // install router
 Vue.use(VueRouter)
@@ -29,6 +31,9 @@ Vue.component('create-button', CreateButton)
 Vue.component('submit-button', SubmitButton)
 Vue.component('cancel-button', CancelButton)
 Vue.component('dropdown-list', DropdownList)
+Vue.component('notifications', Notifications)
+
+let bus = new Vue()
 
 // routing
 const router = new VueRouter({
@@ -54,5 +59,10 @@ router.beforeEach((to, from, next) => {
 /* eslint-disable no-new */
 new Vue({
   render: h => h(App),
+  data () {
+    return {
+      bus: bus
+    }
+  },
   router                  // attaching the router
 }).$mount('#app')

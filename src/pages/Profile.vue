@@ -102,7 +102,9 @@
         }
 
         HttpService.put('userProfile', json)
-        .then(console.log)
+        .then(success => {
+          this.$root.bus.$emit('notification.success', 'Success!', success.successMessage)
+        })
       }
     }
   }
