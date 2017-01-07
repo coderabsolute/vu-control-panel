@@ -21,6 +21,9 @@ const CancelButton = (resolve) => require(['./components/CancelButton.vue'], res
 const DropdownList = (resolve) => require(['./components/DropdownList.vue'], resolve)
 const Notifications = (resolve) => require(['./components/Notification.vue'], resolve)
 
+// Tenant Components
+const BranchComponent = (resolve) => require(['./components/tenant/BranchComponent.vue'], resolve)
+
 // install router
 Vue.use(VueRouter)
 
@@ -32,6 +35,9 @@ Vue.component('submit-button', SubmitButton)
 Vue.component('cancel-button', CancelButton)
 Vue.component('dropdown-list', DropdownList)
 Vue.component('notifications', Notifications)
+
+// Tenant
+Vue.component('branch-component', BranchComponent)
 
 let bus = new Vue()
 
