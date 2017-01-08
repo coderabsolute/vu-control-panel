@@ -59,6 +59,7 @@
 <script>
   import HttpService from '../../services/HttpService'
   import ConstantService from '../../services/ConstantService'
+  const resource = 'branches'
 
   export default {
     name: 'BranchComponent',
@@ -70,7 +71,6 @@
     data () {
       return {
         vm: {
-          id: this.branchId,
           currencyList: [],
           timezoneList: [],
           selectedCurrencyId: null,
@@ -98,7 +98,7 @@
 
     methods: {
       fetchData () {
-        HttpService.getOne('branches', this.vm.id)
+        HttpService.getOne(resource, this.branchId)
         .then(response => {
           this.vm.branchName = response.branchName
           this.vm.businessRegistrationNo = response.businessRegistrationNo
@@ -109,7 +109,6 @@
       },
 
       submit () {
-        const resource = 'branches'
         const body = {
           branchName: this.vm.branchName,
           businessRegistrationNo: this.vm.businessRegistrationNo,
@@ -119,7 +118,7 @@
         }
 
         if (this.mode === 'edit') {
-          HttpService.putOne(resource, this.vm.id, body)
+          HttpService.putOne(resource, this.branchId, body)
           .then(success => { this.$router.go(-1) })
         } else {
           HttpService.post(resource, body)

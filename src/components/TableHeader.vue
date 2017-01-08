@@ -1,8 +1,8 @@
 <template>
-  <thead class="thead-inverse">
+  <thead class="thead">
     <tr>
       <th colspan="100" class="align-text-bottom">
-        <create-button v-bind:path="path"></create-button>
+        <create-button :path="path"></create-button>
       </th>
     </tr>
   </thead>
