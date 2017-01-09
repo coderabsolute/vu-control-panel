@@ -3,7 +3,7 @@
     <div class=" col-sm-6">
       <page-header caption="Login"></page-header>
 
-      <form v-on:submit="login">
+      <form @submit.prevent="onSubmit">
         
         <div class="form-group">
           <label>Username</label>
@@ -42,7 +42,7 @@
     },
 
     methods: {
-      login () {
+      onSubmit () {
         AuthService.signIn(this.vm.username, this.vm.password)
       }
     }

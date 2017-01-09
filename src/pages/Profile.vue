@@ -2,8 +2,7 @@
   <div>
     <page-header caption="Profile"></page-header>
 
-    <form v-on:submit="submit">
-
+    <form @submit.prevent="onSubmit">
       <div class="form-group row">
         <div class="col-sm-4">
           <label>Name</label>
@@ -43,12 +42,11 @@
       </div>
 
       <div class="form-group row">
-        <div class="offset-sm-2 col-sm-10">
-          <submit-button caption="Update Changes"></submit-button>
+        <div class="col-sm-10">
+          <submit-button caption="Update Changes" :disabled="Processing"></submit-button>
           <cancel-button></cancel-button>
         </div>
       </div>
-
     </form>
   </div>
 </template>
@@ -62,6 +60,7 @@
 
     data () {
       return {
+        isProcessing: false,
         vm: {
           languageList: [],
           selectedLanguageId: 0,
@@ -73,11 +72,24 @@
     },
 
     created () {
-      Promise.all([ConstantService.languages()]).then((resolved) => {
-        this.vm.languageList = resolved[0].results
+      try {
+        this.isProcessing = true
 
-        this.fetchData()
-      })
+        Promise.all([ConstantService.languages()]).then((resolved) => {
+          this.vm.languageList = resolved[0].results
+
+          this.fetchData()
+        })
+      } finally {
+        this.isProcessing = false
+      }
+    },
+
+    computed: {
+      Processing () {
+        console.log('computed: ' + this.isProgressing)
+        return this.isProcessing
+      }
     },
 
     methods: {
@@ -93,19 +105,22 @@
         })
       },
 
-      submit () {
-        const json = {
-          name: this.vm.name,
-          defaultLanguageId: this.vm.selectedLanguageId,
-          dateOfBirth: this.vm.dateOfBirth,
-          gender: this.vm.gender
-        }
+      onSubmit () {
+        try {
+          const json = {
+            name: this.vm.name,
+            defaultLanguageId: this.vm.selectedLanguageId,
+            dateOfBirth: this.vm.dateOfBirth,
+            gender: this.vm.gender
+          }
 
-        HttpService.put('userProfile', json)
-        .then(success => {
-          console.log(success)
-          // this.$root.bus.$emit('notification.success', 'Success!', success.successMessage)
-        })
+          HttpService.put('userProfile', json)
+          .then(success => {
+            this.$root.bus.$emit('notification.success', 'Success!', success.successMessage)
+          })
+        } finally {
+          this.isProcessing = false
+        }
       }
     }
   }

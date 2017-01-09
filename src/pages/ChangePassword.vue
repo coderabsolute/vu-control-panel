@@ -2,7 +2,7 @@
   <div>
     <page-header caption="Change Password"></page-header>
 
-    <form v-on:submit="submit">
+    <form @submit.prevent="onSubmit">
 
       <div class="form-group row">
         <div class="col-sm-4">
@@ -47,7 +47,7 @@
     },
 
     methods: {
-      submit () {
+      onSubmit () {
         const json = JSON.stringify(this.vm)
 
         HttpService.put('changePassword', json)

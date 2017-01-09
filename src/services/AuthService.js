@@ -20,6 +20,7 @@ export default {
       }
     })
     .then(response => {
+      console.log(response.data)
       let token = response.data.token
 
       // add token

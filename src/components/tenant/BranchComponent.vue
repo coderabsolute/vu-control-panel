@@ -1,6 +1,6 @@
 <template>
   <div>
-    <form v-on:submit="submit">
+    <form @submit.prevent="onSubmit">
       <div class="form-group row">
         <label class="col-xs-2 col-form-label">Branch name</label>
         <div class="col-xs-4">
@@ -77,7 +77,7 @@
           selectedTimezoneId: null,
           branchName: null,
           businessRegistrationNo: null,
-          isActive: false
+          isActive: true
         }
       }
     },
@@ -108,7 +108,7 @@
         })
       },
 
-      submit () {
+      onSubmit () {
         const body = {
           branchName: this.vm.branchName,
           businessRegistrationNo: this.vm.businessRegistrationNo,
@@ -119,10 +119,16 @@
 
         if (this.mode === 'edit') {
           HttpService.putOne(resource, this.branchId, body)
-          .then(success => { this.$router.go(-1) })
+          .then(success => {
+            this.$root.bus.$emit('notification.success', 'Success!', success.successMessage)
+            this.$router.go(-1)
+          })
         } else {
           HttpService.post(resource, body)
-          .then(response => { this.$router.go(-1) })
+          .then(success => {
+            this.$root.bus.$emit('notification.success', 'Success!', success.successMessage)
+            this.$router.go(-1)
+          })
         }
       }
     }
