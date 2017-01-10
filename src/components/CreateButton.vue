@@ -1,6 +1,6 @@
 <template>
   <div>
-    <button v-on:click="redirectToCreate" type="button" class="btn btn-danger">
+    <button v-on:click="onClick" type="button" class="btn btn-danger">
       Create New Record
     </button>
   </div>  
@@ -10,7 +10,7 @@
     name: 'CreateButton',
     props: ['path'],
     methods: {
-      redirectToCreate () {
+      onClick () {
         this.$router.push(this.path)
       }
     }

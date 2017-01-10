@@ -40,7 +40,7 @@
     <div class="float-xs-right">
       <div class="dropdown">
         <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          <i class="fa fa-cog"></i> Dropdown button
+          <i class="fa fa-cog"></i> {{ name }}
         </button>
 
         <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
@@ -72,17 +72,21 @@
 
 <script>
   import AllRoutes from '../routes/Routes'
+  import { NAME } from '../config/AppConstants'
+  import LocalStorageService from '../services/LocalStorageService'
 
   export default {
     name: 'NavbarTop',
 
     data () {
       return {
+        name: 'Yameen Ataturk',
         routeList: []
       }
     },
 
     created () {
+      this.name = LocalStorageService.get(NAME)
       this.routeList = AllRoutes.getTenantRoutes()
     }
   }

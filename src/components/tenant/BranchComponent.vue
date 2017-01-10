@@ -49,6 +49,7 @@
       <div class="form-group row">
           <div class="offset-sm-2 col-sm-10">
             <submit-button caption="Save"></submit-button>
+            <submit-button caption="Save & New"></submit-button>
             <cancel-button></cancel-button>
           </div>
         </div>

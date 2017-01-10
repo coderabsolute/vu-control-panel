@@ -38,7 +38,7 @@
     beforeCreate () {
       // TODO: Other way is to redirect the user to dashboard forcefully.
       // This could be the improvement for future.
-      AuthService.clearToken()
+      AuthService.clearLocalStorage()
     },
 
     methods: {
