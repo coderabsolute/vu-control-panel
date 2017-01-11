@@ -22,8 +22,8 @@
 </template>
 
 <script>
-  import NavbarTop from './components/NavbarTop.vue'
-  import NavbarSide from './components/NavbarSide.vue'
+  import NavbarTop from './components/layout/NavbarTop.vue'
+  import NavbarSide from './components/layout/NavbarSide.vue'
   import AuthService from './services/AuthService'
 
   export default {

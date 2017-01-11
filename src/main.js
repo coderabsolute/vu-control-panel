@@ -13,13 +13,16 @@ import AuthService from './services/AuthService'
 
 // Components
 // import PageHeader from './components/PageHeader.vue'
-const PageHeader = (resolve) => require(['./components/PageHeader.vue'], resolve)
-const TableHeader = (resolve) => require(['./components/TableHeader.vue'], resolve)
-const CreateButton = (resolve) => require(['./components/CreateButton.vue'], resolve)
-const SubmitButton = (resolve) => require(['./components/SubmitButton.vue'], resolve)
-const CancelButton = (resolve) => require(['./components/CancelButton.vue'], resolve)
-const DropdownList = (resolve) => require(['./components/DropdownList.vue'], resolve)
+const PageHeader = (resolve) => require(['./components/page/PageHeader.vue'], resolve)
+const TableHeader = (resolve) => require(['./components/page/TableHeader.vue'], resolve)
+
 const Notifications = (resolve) => require(['./components/Notification.vue'], resolve)
+
+// Form Components
+const CreateButton = (resolve) => require(['./components/form/CreateButton.vue'], resolve)
+const SubmitButton = (resolve) => require(['./components/form/SubmitButton.vue'], resolve)
+const CancelButton = (resolve) => require(['./components/form/CancelButton.vue'], resolve)
+const DropdownList = (resolve) => require(['./components/form/DropdownList.vue'], resolve)
 
 // Tenant Components
 const BranchComponent = (resolve) => require(['./components/tenant/BranchComponent.vue'], resolve)

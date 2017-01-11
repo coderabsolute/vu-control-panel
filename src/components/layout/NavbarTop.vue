@@ -71,9 +71,9 @@
 </template>
 
 <script>
-  import AllRoutes from '../routes/Routes'
-  import { NAME } from '../config/AppConstants'
-  import LocalStorageService from '../services/LocalStorageService'
+  import AllRoutes from '../../routes/Routes'
+  import { NAME } from '../../config/AppConstants'
+  import LocalStorageService from '../../services/LocalStorageService'
 
   export default {
     name: 'NavbarTop',

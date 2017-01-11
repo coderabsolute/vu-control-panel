@@ -10,7 +10,7 @@
 </template>
 
 <script>
-  import AllRoutes from '../routes/Routes'
+  import AllRoutes from '../../routes/Routes'
 
   export default {
     name: 'NavbarSide',
