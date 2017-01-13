@@ -1,5 +1,4 @@
 <template>
-  <div>
     <form @submit.prevent="onSubmit">
       <div class="form-group row">
         <label class="col-xs-2 col-form-label">Branch name</label>
@@ -53,8 +52,8 @@
             <cancel-button></cancel-button>
           </div>
         </div>
-    </form>
-  </div>
+      </form>
+
 </template>
 
 <script>
