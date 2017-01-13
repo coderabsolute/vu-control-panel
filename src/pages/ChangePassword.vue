@@ -1,5 +1,24 @@
 <template>
   <div>
+    <div class="card">
+        <h3 class="card-header">Control Panel - Login</h3>
+        <div class="card-block backgroundColor">
+          <form @submit.prevent="onSubmit">
+            <div class="form-group">
+              <label>Email address</label>
+              <input v-model="vm.username" type="email" class="form-control" id="username" placeholder="Username" required autofocus>
+            </div>
+            
+            <div class="form-group">
+              <label>Password</label>
+              <input v-model="vm.password" type="password" class="form-control" id="password" placeholder="Password" required>
+            </div>
+
+            <button type="submit" class="btn btn-danger">Login</button>
+          </form>
+        </div>
+      </div>
+
     <page-header caption="Change Password"></page-header>
 
     <form @submit.prevent="onSubmit">

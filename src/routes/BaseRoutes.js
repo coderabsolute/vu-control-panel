@@ -1,9 +1,9 @@
 // Standard Routes for all the users.
-import Login from '../pages/Login.vue'
+import Login from '../pages/auth/Login.vue'
 import Dashboard from '../pages/Dashboard.vue'
 import ChangePassword from '../pages/ChangePassword.vue'
 import Profile from '../pages/Profile.vue'
-import Logout from '../pages/Logout.vue'
+import Logout from '../pages/auth/Logout.vue'
 
 export const BaseRoutes = [
   { path: '/', component: resolve => resolve(Login), meta: { requiresAuth: false } },
