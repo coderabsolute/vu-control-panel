@@ -12,7 +12,7 @@
         <div class="nav-link">
 
           <div class="btn-group">
-            <span class="dropdown-toggle" style="color: white" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <span class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
               Configuration
             </span>
 
@@ -25,10 +25,12 @@
                   <div class="dropdown-divider"></div>
                 </router-link>
             </div>
+
           </div>
 
         </div>
       </li>
+
       <li class="nav-item">
         <a class="nav-link" href="#">Reports</a>
       </li>
@@ -81,7 +83,7 @@
 
     data () {
       return {
-        name: 'Yameen Ataturk',
+        name: '',
         routeList: []
       }
     },

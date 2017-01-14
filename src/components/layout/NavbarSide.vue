@@ -1,5 +1,6 @@
 <template>
   <div class="list-group">
+
     <div class="list-group-item">
       <h6>Configuration</h6>
     </div>
@@ -10,6 +11,7 @@
       <i class="fa fa-map-marker"></i>
       {{ item.name }}
     </router-link>
+
   </div>
 </template>
 

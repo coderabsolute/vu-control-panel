@@ -14,6 +14,7 @@ This component can be replaced with Notification Service.-->
   export default {
     name: 'Alert',
     props: ['type', 'message'],
+
     data () {
       return {
         show: false

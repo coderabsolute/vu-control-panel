@@ -3,12 +3,16 @@ success: this.$root.bus.$emit('notification.success', 'TITLE HERE', 'MESSAGE HER
 info: this.$root.bus.$emit('notification.info', 'TITLE HERE', 'MESSAGE HERE')
 warning: this.$root.bus.$emit('notification.warning', 'TITLE HERE', 'MESSAGE HERE')-->
 <template>
+
   <section id="notifications">
-    <div v-for="notification in notifications" @click="removeNotification(notification)" :class="{ 'notification' : true, 'notification--info' : notification.type == 'info', 'notification--success' : notification.type == 'success', 'notification--warning' : notification.type == 'warning', 'notification--error' : notification.type == 'error', 'notification--removing' : notification.removing }">
+    <div v-for="notification in notifications" 
+      @click="removeNotification(notification)" 
+      :class="{ 'notification' : true, 'notification--info' : notification.type == 'info', 'notification--success' : notification.type == 'success', 'notification--warning' : notification.type == 'warning', 'notification--error' : notification.type == 'error', 'notification--removing' : notification.removing }">
       <h1 class="notification__h1" v-if="notification.title.length > 0">{{ notification.title }}</h1>
       <p class="notification__p" v-if="notification.message.length > 0">{{ notification.message }}</p>
     </div>
   </section>
+
 </template>
 
 <script>
@@ -17,11 +21,13 @@ export default {
     'autoRemove',
     'autoRemoveTime'
   ],
+
   data () {
     return {
       notifications: []
     }
   },
+
   methods: {
     addNotification (notification) {
       notification.title = notification.title || ''
@@ -41,6 +47,7 @@ export default {
         }
       }
     },
+
     success (title, message) {
       this.addNotification({
         title: title,
@@ -48,6 +55,7 @@ export default {
         type: 'success'
       })
     },
+
     info (title, message) {
       this.addNotification({
         title: title,
@@ -55,6 +63,7 @@ export default {
         type: 'info'
       })
     },
+
     error (title, message) {
       this.addNotification({
         title: title,
@@ -62,6 +71,7 @@ export default {
         type: 'error'
       })
     },
+
     warning (title, message) {
       this.addNotification({
         title: title,
@@ -69,6 +79,7 @@ export default {
         type: 'warning'
       })
     },
+
     removeNotification (notification) {
       notification.removing = true
       setTimeout(() => {
@@ -76,16 +87,20 @@ export default {
       }, 500)
     }
   },
+
   created () {
     this.$root.bus.$on('notification.success', (title, message) => {
       this.success(title, message)
     })
+
     this.$root.bus.$on('notification.info', (title, message) => {
       this.info(title, message)
     })
+
     this.$root.bus.$on('notification.error', (title, message) => {
       this.error(title, message)
     })
+
     this.$root.bus.$on('notification.warning', (title, message) => {
       this.warning(title, message)
     })
@@ -94,6 +109,7 @@ export default {
 </script>
 
 <style scoped>
+
 #notifications {
   position: fixed;
   top: 0;
@@ -143,4 +159,5 @@ export default {
 .notification--info {
   background-color: #1e90ff;
 }
+
 </style>
