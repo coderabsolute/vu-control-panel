@@ -1,9 +1,7 @@
 <template>
-  <div>
-    <page-header caption="Products"></page-header>
-
+  <card heading="Products">
     <router-view></router-view>
-  </div>
+  </card>
 </template>
 
 <script>

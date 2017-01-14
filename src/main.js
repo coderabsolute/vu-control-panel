@@ -15,6 +15,8 @@ import AuthService from './services/AuthService'
 // import PageHeader from './components/PageHeader.vue'
 const PageHeader = (resolve) => require(['./components/page/PageHeader.vue'], resolve)
 const TableHeader = (resolve) => require(['./components/page/TableHeader.vue'], resolve)
+const DataGrid = (resolve) => require(['./components/page/DataGrid.vue'], resolve)
+const Card = (resolve) => require(['./components/Card.vue'], resolve)
 
 const Notifications = (resolve) => require(['./components/Notification.vue'], resolve)
 
@@ -33,6 +35,9 @@ Vue.use(VueRouter)
 // Component Global Registration
 Vue.component('page-header', PageHeader)
 Vue.component('table-header', TableHeader)
+Vue.component('data-grid', DataGrid)
+Vue.component('card', Card)
+
 Vue.component('create-button', CreateButton)
 Vue.component('submit-button', SubmitButton)
 Vue.component('cancel-button', CancelButton)

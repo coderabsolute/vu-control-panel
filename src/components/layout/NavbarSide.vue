@@ -1,5 +1,9 @@
 <template>
   <div class="list-group">
+    <div class="list-group-item">
+      <h6>Configuration</h6>
+    </div>
+
     <router-link v-for="item in routeList"
       v-bind:to="item.path"
       class="list-group-item list-group-item-action">

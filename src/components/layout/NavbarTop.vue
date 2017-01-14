@@ -39,11 +39,12 @@
 
     <div class="float-xs-right">
       <div class="dropdown">
-        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" 
+          data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           <i class="fa fa-cog"></i> {{ name }}
         </button>
 
-        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuButton">
           <router-link to="/dashboard" class="dropdown-item">
             <i class="fa fa-th" aria-hidden="true"></i>
             Dashboard

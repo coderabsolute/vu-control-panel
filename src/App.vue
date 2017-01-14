@@ -7,12 +7,12 @@
       <div class="row">
 
         <!--Side navigation bar is only shown to authenticated users-->
-        <div class="col-sm-3 col-md-2 sidebar">
+        <div class="col-sm-1 sidebar" style="padding: 0em;">
           <navbar-side v-if="isAuthenticated"></navbar-side>
         </div>
 
         <!--The pages gets injected here based on the router selection-->
-        <div class="col-sm-9 col-md-10 main">
+        <div class="col-sm-11 main" style="padding-right: 0em;">
           <router-view></router-view>
         </div>
 

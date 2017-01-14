@@ -1,13 +1,7 @@
 <template>
-  <div>
-    <div class="card">
-    <h2 class="card-header">Branches</h2>
-    <div class="card-block">
-      <router-view></router-view>
-    </div>
-  </div>
-    
-  </div>  
+  <card heading="Branches">
+    <router-view></router-view>
+  </card>
 </template>
 
 <script>

@@ -1,57 +1,54 @@
 <template>
-  <div class="card">
-    <h2 class="card-header">Change Password</h2>
-    <div class="card-block">
-      
-      <form @submit.prevent="onSubmit">
-        <div class="form-group row">
-          <div class="col-sm-4">
-            <label>Name</label>
-            <input v-model="vm.name" class="form-control" type="text">
+  <card heading="Profile">
+
+    <form @submit.prevent="onSubmit">
+      <div class="form-group row">
+        <div class="col-sm-4">
+          <label>Name</label>
+          <input v-model="vm.name" class="form-control" type="text">
+        </div>
+      </div>
+
+      <div class="form-group row">
+        <div class="col-sm-4">
+          <label>Date of birth</label>
+          <input v-model="vm.dateOfBirth" class="form-control" type="date">
+        </div>
+      </div>
+
+      <div class="form-group row">
+        <div class="col-sm-4">
+          <label>Gender</label>
+          <div>
+            <label class="form-check-label">
+              <input class="form-check-input" type="radio" name="exampleRadios" value="1" v-model="vm.gender">Male
+            </label>
+            <label class="form-check-label">
+              <input class="form-check-input" type="radio" name="exampleRadios" value="2" v-model="vm.gender">Female
+            </label>
           </div>
         </div>
+      </div>
 
-        <div class="form-group row">
-          <div class="col-sm-4">
-            <label>Date of birth</label>
-            <input v-model="vm.dateOfBirth" class="form-control" type="date">
-          </div>
+      <div class="form-group row">
+        <div class="col-sm-4">
+          <label>Default Language</label>
+          <dropdown-list :options="vm.languageList" 
+            :pre-selected-key="vm.selectedLanguageId" 
+            v-model="vm.selectedLanguageId"
+          ></dropdown-list>
         </div>
+      </div>
 
-        <div class="form-group row">
-          <div class="col-sm-4">
-            <label>Gender</label>
-            <div>
-              <label class="form-check-label">
-                <input class="form-check-input" type="radio" name="exampleRadios" value="1" v-model="vm.gender">Male
-              </label>
-              <label class="form-check-label">
-                <input class="form-check-input" type="radio" name="exampleRadios" value="2" v-model="vm.gender">Female
-              </label>
-            </div>
-          </div>
+      <div class="form-group row">
+        <div class="col-sm-10">
+          <submit-button caption="Update Changes" :disabled="Processing"></submit-button>
+          <cancel-button></cancel-button>
         </div>
+      </div>
+    </form>
 
-        <div class="form-group row">
-          <div class="col-sm-4">
-            <label>Default Language</label>
-            <dropdown-list :options="vm.languageList" 
-              :pre-selected-key="vm.selectedLanguageId" 
-              v-model="vm.selectedLanguageId"
-            ></dropdown-list>
-          </div>
-        </div>
-
-        <div class="form-group row">
-          <div class="col-sm-10">
-            <submit-button caption="Update Changes" :disabled="Processing"></submit-button>
-            <cancel-button></cancel-button>
-          </div>
-        </div>
-      </form>
-
-    </div>
-  </div>
+  </card>
 </template>
 
 <script>

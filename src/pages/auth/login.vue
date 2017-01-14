@@ -2,10 +2,8 @@
   <div>
     <div class="container" style="padding-top: 10em;">
       <div class="col-sm-8">
-        
-        <div class="card">
-          <h3 class="card-header">Control Panel - Login</h3>
-          <div class="card-block backgroundColor">
+          <card heading="Control Panel - Login">
+
             <form @submit.prevent="onSubmit">
               <div class="form-group">
                 <label>Email address</label>
@@ -19,13 +17,11 @@
 
               <button type="submit" class="btn btn-danger">Login</button>
             </form>
-          </div>
-        </div>
+          </card>
 
       </div>
     </div>
   </div>
-  
 </template>
 
 <script>

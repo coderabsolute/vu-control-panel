@@ -1,9 +1,15 @@
 <template>
   <div>
-    <table class="table">
-      <table-header path="/branches/:id/create"></table-header>
+    <table-header path="/branches/:id/create"></table-header>
 
-      <thead class="thead-inverse">
+    <data-grid
+      :data="gridData"
+      :columns="gridColumns"
+      :filter-key="searchQuery">
+    </data-grid>
+    
+    <table class="table">
+      <thead class="thead">
         <tr>
           <th>Branch Name</th>
           <th>Registration No</th>
@@ -41,6 +47,10 @@
     name: 'BranchesList',
     data () {
       return {
+        searchQuery: '',
+        gridColumns: ['branchName', 'businessRegistrationNo', 'currencyName', 'timezoneName', 'isActive'],
+        gridData: [],
+
         loading: false,
         vm: {
           list: [],
@@ -61,8 +71,11 @@
             recordCount: response.recordCount,
             list: response.results
           }
+
+          this.gridData = response.results
         })
       }
     }
   }
 </script>
+
