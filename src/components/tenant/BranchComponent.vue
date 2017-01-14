@@ -46,10 +46,19 @@
         </div>
       </div>
 
+      <div>{{mode}}</div>
+
       <div class="form-group row">
           <div class="offset-sm-2 col-sm-10">
-            <submit-button caption="Save"></submit-button>
-            <submit-button caption="Save & New"></submit-button>
+            <span v-if="mode === 'new'">
+              <submit-button caption="Save"></submit-button>
+              <submit-button caption="Save and New"></submit-button>
+            </span>
+
+            <span v-if="mode === 'edit'">
+              <submit-button caption="Update"></submit-button>
+            </span>
+
             <cancel-button></cancel-button>
           </div>
         </div>
