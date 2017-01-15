@@ -46,8 +46,6 @@
         </div>
       </div>
 
-      <div>{{mode}}</div>
-
       <div class="form-group row">
           <div class="offset-sm-2 col-sm-10">
             <span v-if="mode === 'new'">
@@ -69,6 +67,7 @@
 <script>
   import HttpService from '../../services/HttpService'
   import ConstantService from '../../services/ConstantService'
+
   const resource = 'branches'
 
   export default {

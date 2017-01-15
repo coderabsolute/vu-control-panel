@@ -12,7 +12,6 @@ import Routes from './routes/Routes'
 import AuthService from './services/AuthService'
 
 // Components
-// import PageHeader from './components/PageHeader.vue'
 const TableHeader = (resolve) => require(['./components/page/TableHeader.vue'], resolve)
 const DataGrid = (resolve) => require(['./components/page/DataGrid.vue'], resolve)
 const Card = (resolve) => require(['./components/Card.vue'], resolve)
