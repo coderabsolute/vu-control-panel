@@ -3,6 +3,8 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 
+import ElementUI from 'element-ui'
+
 import App from './App.vue'
 
 // Route Configuration
@@ -29,6 +31,7 @@ const BranchComponent = (resolve) => require(['./components/tenant/BranchCompone
 
 // install router
 Vue.use(VueRouter)
+Vue.use(ElementUI)
 
 // Component Global Registration
 Vue.component('table-header', TableHeader)
