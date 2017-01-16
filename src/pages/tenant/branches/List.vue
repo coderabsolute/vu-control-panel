@@ -1,13 +1,16 @@
 <template>
   <div>
-    <table-header path="/branches/:id/create"></table-header>
+    <div>
+      <el-table :data="gridData" border :default-sort="{prop: 'branchName'}" style="width: 100%">
+        <el-table-column prop="branchName" label="Branch Name" sortable></el-table-column>
+        <el-table-column prop="businessRegistrationNo" label="Registration No" sortable></el-table-column>
+        <el-table-column prop="currencyName" label="Currency" sortable width="180"></el-table-column>
+        <el-table-column prop="timezoneName" label="Timezone" sortable></el-table-column>
+        <el-table-column prop="isActive" label="Active" sortable width="100"></el-table-column>
+      </el-table>
+    </div>
 
-    <data-grid
-      :data="gridData"
-      :columns="gridColumns"
-      :filter-key="searchQuery">
-    </data-grid>
-    
+    <table-header path="/branches/:id/create"></table-header>
     <table class="table">
       <thead class="thead">
         <tr>
