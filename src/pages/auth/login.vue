@@ -1,24 +1,31 @@
 <template>
   <div>
-    <div class="container" style="padding-top: 10em;">
-      <div class="col-sm-8">
-          <card heading="Control Panel - Login">
+    <div class="container topMargin">
+      <div class="offset-sm-1 col-sm-8">
 
-            <form @submit.prevent="onSubmit">
-              <div class="form-group">
-                <label>Email address</label>
-                <input v-model="vm.username" type="email" class="form-control" id="username" placeholder="Username" required autofocus>
+        <div class="card">
+          <div class="card-block">
+            <h5 class="card-title">Registered users</h5>
+
+            <form @submit.prevent="onSubmit" class="form-inline">
+              <div class="input-group">
+                <div class="input-group-addon">@</div>
+                <input v-model="vm.username" type="email" class="form-control" id="username" placeholder="Email address" required autofocus>
               </div>
               
-              <div class="form-group">
-                <label>Password</label>
+              <div class="input-group">
+                <div class="input-group-addon">*</div>
                 <input v-model="vm.password" type="password" class="form-control" id="password" placeholder="Password" required>
               </div>
 
-              <button type="submit" class="btn btn-danger">Login</button>
+              <button type="submit" class="btn btn-primary">Log In</button>
+              
             </form>
-          </card>
-
+          </div>
+          <h2 class="card-header"></h2>
+        </div>
+        
+        <register></register>
       </div>
     </div>
   </div>
@@ -47,7 +54,17 @@
     methods: {
       onSubmit () {
         AuthService.signIn(this.vm.username, this.vm.password)
+      },
+
+      onRegister () {
+        this.$router.push({ name: 'register' })
       }
     }
   }
 </script>
+
+<style>
+  .topMargin {
+    padding-top: 5em;
+  }
+</style>

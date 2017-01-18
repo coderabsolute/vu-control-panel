@@ -1,6 +1,6 @@
 <template>
   <div>
-    <select v-model="selectedId" class="custom-select form-control">
+    <select v-model="selectedId" class="form-control">
       <option v-bind:value="null">Choose....</option>
       <option v-for="option in options" v-bind:value="option.key">{{ option.value }}</option>
     </select>

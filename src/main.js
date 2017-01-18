@@ -14,6 +14,8 @@ import Routes from './routes/Routes'
 import AuthService from './services/AuthService'
 
 // Components
+const RegisterComponent = (resolve) => require(['./components/registration/Register.vue'], resolve)
+
 const TableHeader = (resolve) => require(['./components/page/TableHeader.vue'], resolve)
 const DataGrid = (resolve) => require(['./components/page/DataGrid.vue'], resolve)
 const Card = (resolve) => require(['./components/Card.vue'], resolve)
@@ -40,6 +42,9 @@ Vue.component('create-button', CreateButton)
 Vue.component('submit-button', SubmitButton)
 Vue.component('cancel-button', CancelButton)
 Vue.component('dropdown-list', DropdownList)
+
+// Registration
+Vue.component('register', RegisterComponent)
 
 // Tenant
 Vue.component('branch-component', BranchComponent)

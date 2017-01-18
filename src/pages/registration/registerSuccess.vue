@@ -10,7 +10,7 @@
 
 <script>
   export default {
-    name: 'RegistrationSuccessfulPage',
+    name: 'registerSuccessPage',
 
     created () {
       this.email = this.$route.params.email

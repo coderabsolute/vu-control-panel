@@ -1,14 +1,17 @@
-import RegistrationPage from '../pages/registration/Registration.vue'
-import RegistrationSuccessfulPage from '../pages/registration/RegistrationSuccessful.vue'
+import registerSuccessPage from '../pages/registration/registerSuccess.vue'
 import ConfirmationPage from '../pages/registration/Confirmation.vue'
 
 export const RegistrationRoutes = [
-  { path: '/registration', component: resolve => resolve(RegistrationPage), meta: { requiresAuth: false } },
   {
-    path: '/registrationSuccessful/:email',
-    name: 'registrationSuccessful',
-    component: resolve => resolve(RegistrationSuccessfulPage),
+    path: '/registerSuccess/:email',
+    name: 'registerSuccess',
+    component: resolve => resolve(registerSuccessPage),
     meta: { requiresAuth: false }
   },
-  { path: '/confirmation', component: resolve => resolve(ConfirmationPage), meta: { requiresAuth: false } }
+  {
+    name: 'confirmation',
+    path: '/confirmation',
+    component: resolve => resolve(ConfirmationPage),
+    meta: { requiresAuth: false }
+  }
 ]
