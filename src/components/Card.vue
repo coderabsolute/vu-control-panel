@@ -1,6 +1,6 @@
 <template>
   <div class="card">
-    <h2 class="card-header">{{heading}}</h2>
+    <h2 class="card-header headerStyle">{{heading}}</h2>
     <div class="card-block">
       <slot></slot>
     </div>
@@ -13,3 +13,9 @@
     props: ['heading']
   }
 </script>
+
+<style>
+  .headerStyle {
+    color: blueviolet
+  }
+</style>

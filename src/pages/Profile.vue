@@ -116,8 +116,6 @@
 
           HttpService.put('userProfile', json)
           .then(success => {
-            // this.$root.bus.$emit('notification.success', 'Success!', success.successMessage)
-
             this.$notify({
               title: 'Success',
               message: success.successMessage,

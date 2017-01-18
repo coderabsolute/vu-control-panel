@@ -1,14 +1,14 @@
 {
-	"consoleLog": {
-	"prefix": "log",
-	"body": "console.log(${1:object})",
-	"description": "Displays a message in the console"
-},
-"import": {
-	"prefix": "imp",
-	"body": "import ${2:moduleName} from '${1:module}'$0",
-	"description": "Imports entire module statement in ES6 syntax"
-}
+		"consoleLog": {
+		"prefix": "log",
+		"body": "console.log(${1:object})",
+		"description": "Displays a message in the console"
+	},
+	"import": {
+		"prefix": "imp",
+		"body": "import ${2:moduleName} from '${1:module}'$0",
+		"description": "Imports entire module statement in ES6 syntax"
+	}
 /*
 	 // Place your snippets for JavaScript here. Each snippet is defined under a snippet name and has a prefix, body and 
 	 // description. The prefix is what is used to trigger the snippet and the body will be expanded and inserted. Possible variables are:

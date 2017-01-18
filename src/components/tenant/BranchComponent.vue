@@ -129,13 +129,25 @@
         if (this.mode === 'edit') {
           HttpService.putOne(resource, this.branchId, body)
           .then(success => {
-            this.$root.bus.$emit('notification.success', 'Success!', success.successMessage)
+            this.$notify({
+              title: 'Success',
+              message: success.successMessage,
+              type: 'success',
+              duration: 2000
+            })
+
             this.$router.go(-1)
           })
         } else {
           HttpService.post(resource, body)
           .then(success => {
-            this.$root.bus.$emit('notification.success', 'Success!', success.successMessage)
+            this.$notify({
+              title: 'Success',
+              message: success.successMessage,
+              type: 'success',
+              duration: 2000
+            })
+
             this.$router.go(-1)
           })
         }

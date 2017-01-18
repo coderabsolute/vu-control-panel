@@ -18,8 +18,6 @@ const TableHeader = (resolve) => require(['./components/page/TableHeader.vue'], 
 const DataGrid = (resolve) => require(['./components/page/DataGrid.vue'], resolve)
 const Card = (resolve) => require(['./components/Card.vue'], resolve)
 
-const Notifications = (resolve) => require(['./components/Notification.vue'], resolve)
-
 // Form Components
 const CreateButton = (resolve) => require(['./components/form/CreateButton.vue'], resolve)
 const SubmitButton = (resolve) => require(['./components/form/SubmitButton.vue'], resolve)
@@ -42,12 +40,9 @@ Vue.component('create-button', CreateButton)
 Vue.component('submit-button', SubmitButton)
 Vue.component('cancel-button', CancelButton)
 Vue.component('dropdown-list', DropdownList)
-Vue.component('notifications', Notifications)
 
 // Tenant
 Vue.component('branch-component', BranchComponent)
-
-let bus = new Vue()
 
 // routing
 const router = new VueRouter({
@@ -73,10 +68,5 @@ router.beforeEach((to, from, next) => {
 /* eslint-disable no-new */
 new Vue({
   render: h => h(App),
-  data () {
-    return {
-      bus: bus
-    }
-  },
   router                  // attaching the router
 }).$mount('#app')
