@@ -2,7 +2,7 @@
   <card heading="Registration Successful!">
     <div class="form-group">
       <label>
-        In the next few minutes we will be sending the confirmation email to {{ email }}.
+        In the next few minutes we will be sending the confirmation email to {{ username }}.
       </label>
     </div>
   </card>
@@ -13,12 +13,12 @@
     name: 'registerSuccessPage',
 
     created () {
-      this.email = this.$route.params.email
+      this.username = this.$route.params.username
     },
 
     data () {
       return {
-        email: ''
+        username: ''
       }
     }
   }

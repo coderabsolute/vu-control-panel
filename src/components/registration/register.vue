@@ -87,7 +87,7 @@
 
     methods: {
       onSubmit () {
-        this.$router.push({ name: 'registerSuccess', params: { email: this.vm.username } })
+        this.$router.push({ name: 'registerSuccess', params: { username: this.vm.username } })
       }
     }
   }

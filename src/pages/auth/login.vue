@@ -20,6 +20,10 @@
 
               <button type="submit" class="btn btn-primary">Log In</button>
               
+              <div>
+                <button @click="onForgotPassword" type="button" class="btn btn-link">Forgot Password?</button>
+              </div>
+
             </form>
           </div>
           <h2 class="card-header"></h2>
@@ -56,8 +60,8 @@
         AuthService.signIn(this.vm.username, this.vm.password)
       },
 
-      onRegister () {
-        this.$router.push({ name: 'register' })
+      onForgotPassword () {
+        this.$router.push({ name: 'forgotPassword' })
       }
     }
   }
