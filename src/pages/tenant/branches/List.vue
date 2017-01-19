@@ -1,7 +1,17 @@
 <template>
   <div>
     <div>
+      <table-header path="/branches/:id/create"></table-header>
+
       <el-table :data="gridData" border :default-sort="{prop: 'branchName'}" style="width: 100%">
+        <el-table-column label="Action" width="120">
+          <template scope="scope">
+            <i @click="onRowDelete(scope.row)" class="fa fa-times btn btn-link" aria-hidden="true"></i>
+            <i @click="onRowEdit(scope.row)" class="fa fa-pencil-square-o btn btn-link" aria-hidden="true"></i>
+            
+          </template>
+        </el-table-column>
+
         <el-table-column prop="branchName" label="Branch Name" sortable></el-table-column>
         <el-table-column prop="businessRegistrationNo" label="Registration No" sortable></el-table-column>
         <el-table-column prop="currencyName" label="Currency" sortable width="180"></el-table-column>
@@ -9,8 +19,7 @@
         <el-table-column prop="isActive" label="Active" sortable width="100"></el-table-column>
       </el-table>
     </div>
-
-    <table-header path="/branches/:id/create"></table-header>
+    
     <table class="table">
       <thead class="thead">
         <tr>
@@ -77,6 +86,15 @@
 
           this.gridData = response.results
         })
+      },
+
+      onRowDelete (row) {
+        console.log('onRowDelete:' + row.branchId)
+      },
+
+      onRowEdit (row) {
+        this.$router.push({ path: 'edit', params: { id: row.branchId } })
+        console.log('onRowEdit:' + row.branchId)
       }
     }
   }

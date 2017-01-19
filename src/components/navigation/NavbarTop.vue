@@ -10,32 +10,22 @@
 
       <li class="nav-item active">
         <div class="nav-link">
-
           <div class="btn-group">
             <span class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
               Configuration
             </span>
 
             <div class="dropdown-menu dropdown-menu-right">
-                <router-link v-for="item in routeList"
-                  v-bind:to="item.path"
-                  class="dropdown-item">
-                  <i class="fa fa-map-marker"></i>
-                  {{ item.name }}
-                  <div class="dropdown-divider"></div>
-                </router-link>
+              <router-link v-for="item in routeList"
+                v-bind:to="item.path"
+                class="dropdown-item">
+                <i class="fa fa-map-marker"></i>
+                {{ item.name }}
+                <div class="dropdown-divider"></div>
+              </router-link>
             </div>
-
           </div>
-
         </div>
-      </li>
-
-      <li class="nav-item">
-        <a class="nav-link" href="#">Reports</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">Reports</a>
       </li>
     </ul>
 

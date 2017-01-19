@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="container topMargin">
-      <div class="offset-sm-1 col-sm-8">
+      <div class="offset-sm-1 col-sm-8 jumbotron">
 
         <div class="card">
           <div class="card-block">
