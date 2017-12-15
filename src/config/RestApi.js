@@ -1,4 +1,4 @@
-export const authUrl = 'http://52.39.73.158/v1/auth'
+export const authUrl = 'http://localhost:8888/v1/auth'
 export const securedUrl = {
   // baseUrl: 'http://localhost:8888/v1/',
   baseUrl: 'http://localhost:8888/v1/',
